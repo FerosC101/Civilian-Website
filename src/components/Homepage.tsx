@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Homepage.css';
 
 const Homepage = () => {
+    const phone1Ref = useRef<HTMLDivElement>(null);
+    const phone2Ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const scrollFactor = scrollY * 0.5;
+
+            if (phone1Ref.current) {
+                phone1Ref.current.style.transform = `translateY(${scrollFactor * 0.3}px) rotateY(${-15 + scrollFactor * 0.1}deg) rotateX(${scrollFactor * 0.05}deg)`;
+            }
+
+            if (phone2Ref.current) {
+                phone2Ref.current.style.transform = `translateY(${scrollFactor * -0.2}px) rotateY(${15 - scrollFactor * 0.1}deg) rotateX(${scrollFactor * 0.05}deg)`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <div className="homepage">
             {/* Header Section */}
@@ -18,93 +39,87 @@ const Homepage = () => {
                         </div>
                         <h1 className="logo-text">CIVILIAN</h1>
                     </div>
-                    <p className="tagline">LONG SHIT ASS DESCRIPTION</p>
+                    <p className="tagline">Smart IoT Security & Monitoring Platform</p>
                 </div>
             </header>
 
             {/* Main Content */}
             <main className="main-content">
                 <div className="container">
-                    <div className="content-grid">
-                        {/* Device Mockup Section */}
-                        <section className="mockup-section">
-                            <h2>DEVICE MOCKUP</h2>
-                            <h3>DOWNLOAD THIS APP</h3>
-                            <div className="phone-mockup">
-                                <div className="phone">
-                                    <div className="phone-screen"></div>
-                                </div>
-                                <div className="phone">
-                                    <div className="phone-screen"></div>
-                                </div>
-                            </div>
-                            <p className="mockup-description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <div className="download-links">
-                                <div className="app-store-btn">App Store</div>
-                                <div className="google-play-btn">Google Play</div>
-                                <div className="qr-code"></div>
-                            </div>
-                        </section>
-
-                        {/* To Do Section */}
-                        <section className="todo-section">
-                            <h2>TO DO :</h2>
-                            <div className="todo-content">
-                                <p>pagawa parang blog style na article web page about us.</p>
-                                <ul>
-                                    <li>about the IoT</li>
-                                    <li>civilian foundation</li>
-                                    <li>about the team</li>
-                                </ul>
-                                <p>like ganan</p>
-                                <p>yung isang page sa giled → is sample reference</p>
-                            </div>
-                        </section>
-
-                        {/* About the App Section */}
-                        <section className="about-section">
-                            <h2>about_the_app</h2>
-                            <div className="app-preview">
-                                <div className="device-frame">
-                                    <div className="device-screen">
-                                        <div className="app-icon">
-                                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                                                <rect width="60" height="60" rx="12" fill="#1e293b"/>
-                                                <path d="M30 15C22.5 15 16.5 21 16.5 28.5C16.5 31.5 17.25 34.2 18.75 36.45C16.2 38.25 14.25 41.25 14.25 44.7C14.25 50.25 18.75 54.75 24.3 54.75H35.7C41.25 54.75 45.75 50.25 45.75 44.7C45.75 41.25 43.8 38.25 41.25 36.45C42.75 34.2 43.5 31.5 43.5 28.5C43.5 21 37.5 15 30 15Z" fill="#0ea5e9"/>
-                                            </svg>
+                    {/* Device Mockup Section - Full Width */}
+                    <section className="device-mockup-section">
+                        <div className="mockup-content">
+                            <div className="phone-showcase">
+                                <div className="phone-container">
+                                    <div ref={phone1Ref} className="phone-3d phone-left">
+                                        <div className="phone-frame">
+                                            <div className="phone-screen">
+                                                <div className="screen-content">
+                                                    <div className="status-bar"></div>
+                                                    <div className="app-preview">
+                                                        <div className="app-icon">
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                                <path d="M15 4C11.25 4 8.25 6.75 8.25 10.5C8.25 12 8.625 13.35 9.375 14.475C8.1 15.375 7.125 16.875 7.125 18.6C7.125 21.375 9.375 23.625 12.15 23.625H17.85C20.625 23.625 22.875 21.375 22.875 18.6C22.875 16.875 21.9 15.375 20.625 14.475C21.375 13.35 21.75 12 21.75 10.5C21.75 6.75 18.75 4 15 4Z" fill="white"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div className="preview-bars">
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <p className="change-note">*change to actual pic</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="info-section">
-                                <h3>ANOTHER HEADER</h3>
-                                <div className="info-item">
-                                    <span>more information</span>
-                                    <div className="info-details">
-                                        <p>ANOTHER PICTURE FLEXIBLE</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
 
-                    {/* Bottom Section */}
-                    <section className="bottom-section">
-                        <div className="page-sections">
-                            <div className="section-item">
-                                <h3>HEADER (civilian logo + "CIVILIAN" Title font)</h3>
-                                <p>DESCRIPTION (NOT LESS THAN 1 PARAGRAPH, LAGAY MO DITO MOTTO, HASTAQS AND SHITS)</p>
-                                <div className="mockup-preview">
-                                    <div className="mockup-card">
-                                        <div className="mockup-placeholder"></div>
-                                        <div className="mockup-text">
-                                            <div className="text-line"></div>
-                                            <div className="text-line"></div>
-                                            <div className="text-line"></div>
+                                    <div ref={phone2Ref} className="phone-3d phone-right">
+                                        <div className="phone-frame">
+                                            <div className="phone-screen">
+                                                <div className="screen-content">
+                                                    <div className="status-bar"></div>
+                                                    <div className="app-preview">
+                                                        <div className="app-icon secondary">
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                                <path d="M15 4C11.25 4 8.25 6.75 8.25 10.5C8.25 12 8.625 13.35 9.375 14.475C8.1 15.375 7.125 16.875 7.125 18.6C7.125 21.375 9.375 23.625 12.15 23.625H17.85C20.625 23.625 22.875 21.375 22.875 18.6C22.875 16.875 21.9 15.375 20.625 14.475C21.375 13.35 21.75 12 21.75 10.5C21.75 6.75 18.75 4 15 4Z" fill="white"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div className="preview-bars">
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="download-section">
+                                <h2 className="section-title">DEVICE MOCKUP</h2>
+                                <h3 className="section-subtitle">DOWNLOAD THIS APP</h3>
+
+                                <p className="description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+
+                                <div className="download-buttons">
+                                    <div className="store-buttons">
+                                        <button className="store-btn apple-btn">
+                                            <span>Lorem ipsum</span>
+                                        </button>
+                                        <button className="store-btn google-btn">
+                                            <span>Lorem ipsum</span>
+                                        </button>
+                                    </div>
+                                    <div className="qr-section">
+                                        <div className="qr-code">
+                                            <div className="qr-pattern"></div>
                                         </div>
                                     </div>
                                 </div>
