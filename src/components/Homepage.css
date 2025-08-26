@@ -1,4 +1,4 @@
-/* Homepage.css */
+/* Homepage.css - Updated with actual CIVILIAN content */
 * {
     margin: 0;
     padding: 0;
@@ -64,6 +64,7 @@ body {
     margin-left: 75px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 500;
 }
 
 /* Main Content */
@@ -303,20 +304,13 @@ body {
     transition: all 0.3s ease;
     min-width: 150px;
     text-align: left;
+    border: 1px solid #333;
 }
 
 .store-btn:hover {
     background: #333;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.apple-btn {
-    border: 1px solid #333;
-}
-
-.google-btn {
-    border: 1px solid #333;
 }
 
 .qr-section {
@@ -332,15 +326,6 @@ body {
     border-radius: 8px;
     padding: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.qr-pattern {
-    width: 100%;
-    height: 100%;
-    background:
-            repeating-linear-gradient(0deg, #000 0px, #000 3px, transparent 3px, transparent 6px),
-            repeating-linear-gradient(90deg, #000 0px, #000 3px, transparent 3px, transparent 6px);
-    border-radius: 4px;
 }
 
 /* About the App Section */
@@ -516,6 +501,7 @@ body {
     color: #64748b;
     font-size: 0.8rem;
     font-style: italic;
+    text-align: center;
 }
 
 .info-cards {
@@ -564,8 +550,6 @@ body {
     color: #cbd5e1;
     font-size: 0.9rem;
     line-height: 1.5;
-    text-transform: uppercase;
-    font-weight: 500;
 }
 
 .card-title {
@@ -598,6 +582,7 @@ body {
     font-size: 0.9rem;
     text-transform: uppercase;
     font-weight: 500;
+    text-align: center;
 }
 
 /* Foundation Section */
@@ -630,6 +615,7 @@ body {
     border-radius: 12px;
     padding: 40px 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 200px;
@@ -657,6 +643,7 @@ body {
 .disaster-image p {
     font-size: 0.9rem;
     color: #94a3b8;
+    line-height: 1.4;
 }
 
 .foundation-banner {
@@ -686,6 +673,7 @@ body {
     border-radius: 12px;
     padding: 40px 30px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 150px;
@@ -696,6 +684,14 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.content-card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
     text-align: center;
 }
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import './Homepage.css';
+import './Homepage.css'
 
 const Homepage = () => {
-    const phone1Ref = useRef<HTMLDivElement>(null);
-    const phone2Ref = useRef<HTMLDivElement>(null);
+    const phone1Ref = useRef(null);
+    const phone2Ref = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,16 +30,17 @@ const Homepage = () => {
                 <div className="container">
                     <div className="logo-section">
                         <div className="brain-icon">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path d="M20 5C15 5 11 9 11 14C11 16 11.5 17.8 12.5 19.3C10.8 20.5 9.5 22.5 9.5 24.8C9.5 28.5 12.5 31.5 16.2 31.5H23.8C27.5 31.5 30.5 28.5 30.5 24.8C30.5 22.5 29.2 20.5 27.5 19.3C28.5 17.8 29 16 29 14C29 9 25 5 20 5Z" fill="#0ea5e9"/>
-                                <circle cx="16" cy="16" r="2" fill="#1e293b"/>
-                                <circle cx="24" cy="16" r="2" fill="#1e293b"/>
-                                <path d="M15 22C15 22 17 24 20 24C23 24 25 22 25 22" stroke="#1e293b" strokeWidth="2" fill="none"/>
-                            </svg>
+                            <img
+                                src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756178197/CIVILIAN_LOGO_wwg5cm.png"
+                                alt="Civilian Logo"
+                                width="40"
+                                height="40"
+                                style={{ objectFit: 'contain' }}
+                            />
                         </div>
                         <h1 className="logo-text">CIVILIAN</h1>
                     </div>
-                    <p className="tagline">Smart IoT Security & Monitoring Platform</p>
+                    <p className="tagline">Smart Urban Disaster Resilience Platform</p>
                 </div>
             </header>
 
@@ -51,33 +52,75 @@ const Homepage = () => {
                         <div className="mockup-content">
                             <div className="download-section">
                                 <h2 className="section-title">DEVICE MOCKUP</h2>
-                                <h3 className="section-subtitle">DOWNLOAD THIS APP</h3>
+                                <h3 className="section-subtitle">DOWNLOAD THE CIVILIAN APP</h3>
 
                                 <p className="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Take control of your safety with CIVILIAN's smart disaster resilience platform.
+                                    Get real-time alerts, evacuation routes, and emergency coordination tools right
+                                    on your mobile device. Stay connected even during network failures with our
+                                    decentralized mesh network technology.
                                 </p>
 
                                 <div className="download-buttons">
-                                    <button className="store-btn">Lorem ipsum</button>
-                                    <button className="store-btn">Lorem ipsum</button>
-                                    <div className="qr-code">
-                                        <div className="qr-pattern"></div>
+                                    <div className="store-buttons">
+                                        <button className="store-btn">Download for iOS</button>
+                                        <button className="store-btn">Download for Android</button>
+                                    </div>
+                                    <div className="qr-section">
+                                        <div className="qr-code" style={{ width: '180px', height: '180px' }}>
+                                            <img
+                                                src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756178248/GRIP_PROTOTYPE_ciaije.png"
+                                                alt="QR Code for App Download"
+                                                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="phone-showcase">
                                 <div className="phone-container">
-                                    <div ref={phone1Ref} className="phone-3d">
+                                    <div ref={phone1Ref} className="phone-3d phone-left">
                                         <div className="phone-frame">
-                                            <div className="phone-screen"></div>
+                                            <div className="phone-screen">
+                                                <div className="screen-content">
+                                                    <div className="status-bar"></div>
+                                                    <div className="app-preview">
+                                                        <div className="app-icon">
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                                <path d="M15 3C10 3 7 6 7 11C7 13 7.5 14.8 8.5 16.3C6.8 17.5 5.5 19.5 5.5 21.8C5.5 25.5 8.5 28.5 12.2 28.5H17.8C21.5 28.5 24.5 25.5 24.5 21.8C24.5 19.5 23.2 17.5 21.5 16.3C22.5 14.8 23 13 23 11C23 6 19 3 15 3Z" fill="white"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div className="preview-bars">
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div ref={phone2Ref} className="phone-3d">
+                                    <div ref={phone2Ref} className="phone-3d phone-right">
                                         <div className="phone-frame">
-                                            <div className="phone-screen"></div>
+                                            <div className="phone-screen">
+                                                <div className="screen-content">
+                                                    <div className="status-bar"></div>
+                                                    <div className="app-preview">
+                                                        <div className="app-icon secondary">
+                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                                <path d="M15 3C10 3 7 6 7 11C7 13 7.5 14.8 8.5 16.3C6.8 17.5 5.5 19.5 5.5 21.8C5.5 25.5 8.5 28.5 12.2 28.5H17.8C21.5 28.5 24.5 25.5 24.5 21.8C24.5 19.5 23.2 17.5 21.5 16.3C22.5 14.8 23 13 23 11C23 6 19 3 15 3Z" fill="#0ea5e9"/>
+                                                            </svg>
+                                                        </div>
+                                                        <div className="preview-bars">
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                            <div className="bar"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -93,8 +136,15 @@ const Homepage = () => {
 
                                 <div className="about-description">
                                     <p>
-                                        Pagawa parang blog style na article web page about us,
-                                        like ganan yung isang page sa giled → is sample reference
+                                        CIVILIAN is a comprehensive smart urban disaster resilience platform that acts as
+                                        a virtual brain for cities. Our system collects environmental, structural, and
+                                        behavioral data through IoT sensors, analyzes risks with AI, and provides real-time
+                                        guidance through mobile apps and dashboards.
+                                    </p>
+                                    <p>
+                                        The platform supports both governments and citizens before, during, and after
+                                        disasters using a self-adaptive mesh network that works even during blackouts
+                                        or network failures.
                                     </p>
                                 </div>
 
@@ -108,8 +158,8 @@ const Homepage = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3>About the IoT</h3>
-                                            <p>Comprehensive IoT security monitoring and management platform</p>
+                                            <h3>IoT Mesh Disaster Grid</h3>
+                                            <p>Self-adaptive mesh network with structural health monitoring, flood detection, and emergency resource routing that works during network failures</p>
                                         </div>
                                     </div>
 
@@ -121,8 +171,8 @@ const Homepage = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3>Civilian Foundation</h3>
-                                            <p>Our mission to democratize security technology for everyone</p>
+                                            <h3>AI Risk Forecasting</h3>
+                                            <p>Advanced artificial intelligence analyzes environmental data to predict disasters, generate evacuation routes, and coordinate emergency responses</p>
                                         </div>
                                     </div>
 
@@ -136,8 +186,8 @@ const Homepage = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3>About the Team</h3>
-                                            <p>Meet the experts behind the innovative security solutions</p>
+                                            <h3>Real-time Emergency Alerts</h3>
+                                            <p>Decentralized alert system delivers critical information, evacuation plans, and safety updates directly to citizens and emergency responders</p>
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +212,7 @@ const Homepage = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="device-note">*change to actual pic</div>
+                                            <div className="device-note">IoT Sensor Device - ₱3,000 per unit</div>
                                         </div>
                                     </div>
                                 </div>
@@ -171,21 +221,24 @@ const Homepage = () => {
                                     <div className="info-card">
                                         <div className="card-header">
                                             <div className="civilian-logo-small">
-                                                <span>civilian logo</span>
+                                                <span>CIVILIAN</span>
                                             </div>
-                                            <h3>CIVILIAN</h3>
+                                            <h3>CIVILIAN PLATFORM</h3>
                                         </div>
-                                        <p className="card-description">LONG SHIT ASS DESCRIPTION</p>
+                                        <p className="card-description">
+                                            Complete disaster resilience solution with IoT monitoring, AI forecasting,
+                                            and emergency coordination tools for smart cities and communities
+                                        </p>
                                     </div>
 
                                     <div className="info-card">
-                                        <h4 className="card-title">ANOTHER HEADER</h4>
-                                        <p>more information</p>
+                                        <h4 className="card-title">SUBSCRIPTION MODEL</h4>
+                                        <p>Monthly subscription: ₱50 per device for cloud services, AI analytics, and real-time monitoring</p>
                                     </div>
 
                                     <div className="info-card flexible">
                                         <div className="flexible-content">
-                                            <span>ANOTHER PICTURE FLEXIBLE</span>
+                                            <span>10 KEY FEATURES: IoT Mesh Grid • Structural Monitoring • Flood Detection • AI Forecasting • Mobile Alerts</span>
                                         </div>
                                     </div>
                                 </div>
@@ -195,40 +248,46 @@ const Homepage = () => {
 
                     {/* Foundation Section */}
                     <section className="foundation-section">
-                        <h2 className="section-title">FOUNDATION</h2>
+                        <h2 className="section-title">DISASTER RESILIENCE FOUNDATION</h2>
 
                         <div className="foundation-grid">
                             <div className="disaster-card">
                                 <div className="disaster-image">
-                                    <span>PICTURE NG DISASTERS</span>
-                                    <p>or picture ng mga nasalanta</p>
+                                    <span>FLOOD MONITORING</span>
+                                    <p>Smart sensors detect water levels and predict flood patterns for early warning systems</p>
                                 </div>
                             </div>
 
                             <div className="disaster-card">
                                 <div className="disaster-image">
-                                    <span>floods</span>
+                                    <span>EARTHQUAKE DETECTION</span>
+                                    <p>Structural health monitoring with vibration sensors and gyroscopes for seismic activity</p>
                                 </div>
                             </div>
 
                             <div className="disaster-card">
                                 <div className="disaster-image">
-                                    <span>EARTHQUAKES</span>
+                                    <span>FIRE PREVENTION</span>
+                                    <p>Temperature and flame sensors provide rapid fire detection and automated emergency responses</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="foundation-banner">
-                            <h3>FOUNDATION</h3>
+                            <h3>CIVILIAN FOUNDATION</h3>
                         </div>
 
                         <div className="foundation-content">
                             <div className="content-card">
-                                <h4>ARTICLE DESCRIPTION</h4>
+                                <h4>OUR MISSION</h4>
+                                <p>To democratize disaster resilience technology and empower cities to become smarter,
+                                    safer, and more self-reliant in crisis events through innovative IoT solutions</p>
                             </div>
 
                             <div className="content-card">
-                                <h4>SUB ARTICLES</h4>
+                                <h4>IMPACT GOALS</h4>
+                                <p>Prevent loss of life and infrastructure damage • Accelerate disaster recovery
+                                    • Enable real-time emergency coordination • Build resilient smart communities</p>
                             </div>
                         </div>
                     </section>
@@ -251,43 +310,48 @@ const Homepage = () => {
                                 </div>
                             </div>
                             <div className="team-banner">
-                                <h3>MEET THE TEAM</h3>
+                                <h3>CIVILIAN DEVELOPMENT TEAM</h3>
                             </div>
                         </div>
 
                         <div className="team-info">
                             <div className="logo-section-small">
                                 <div className="logo-placeholder">
-                                    <span>NEXT CS LOGO (SI JR BAHALA DITO), pero yung ratio nung placeholder is rectangle</span>
+                                    <span>NEXT CS INNOVATION TEAM - Expert developers and engineers dedicated to creating cutting-edge disaster resilience solutions</span>
                                 </div>
                             </div>
 
                             <div className="team-members">
                                 <div className="members-grid">
                                     <div className="member-item">
-                                        <span>members :</span>
+                                        <span>Core Development Team:</span>
                                     </div>
                                     <div className="member-item">
-                                        <span>name - role</span>
+                                        <span>Project Lead - System Architecture</span>
                                     </div>
                                     <div className="member-item">
-                                        <span>name - role</span>
+                                        <span>IoT Engineer - Hardware Integration</span>
                                     </div>
                                     <div className="member-item">
-                                        <span>name - role</span>
+                                        <span>AI Specialist - Machine Learning</span>
                                     </div>
                                     <div className="member-item">
-                                        <span>name - role</span>
+                                        <span>Mobile Developer - App Development</span>
                                     </div>
                                     <div className="member-item">
-                                        <span>name - role</span>
+                                        <span>UX Designer - Interface Design</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="team-description">
-                            <p>description about us, and other Faqs</p>
+                            <p>
+                                Our multidisciplinary team combines expertise in IoT development, artificial intelligence,
+                                mobile app development, and disaster management. We're committed to building innovative
+                                solutions that protect communities and save lives through smart technology. Our mission
+                                is to make disaster resilience accessible to cities worldwide.
+                            </p>
                         </div>
                     </section>
                 </div>
