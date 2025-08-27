@@ -405,66 +405,115 @@ const Homepage = () => {
                         </div>
                     </section>
 
-                    {/* Meet the Team Section */}
+                    {/* Meet the Team Section - Redesigned */}
                     <section className="team-section">
                         <h2 className="section-title">MEET THE TEAM</h2>
 
-                        <div className="team-photo">
-                            <div className="team-image">
-                                <div className="team-placeholder">
-                                    <svg width="80" height="80" viewBox="0 0 60 60" fill="none">
-                                        <circle cx="30" cy="20" r="8" fill="#64748b"/>
-                                        <path d="M15 45c0-8.284 6.716-15 15-15s15 6.716 15 15" fill="#64748b"/>
-                                        <circle cx="45" cy="18" r="6" fill="#94a3b8"/>
-                                        <path d="M35 40c0-5.523 4.477-10 10-10s10 4.477 10 10" fill="#94a3b8"/>
-                                        <circle cx="15" cy="18" r="6" fill="#94a3b8"/>
-                                        <path d="M5 40c0-5.523 4.477-10 10-10s10 4.477 10 10" fill="#94a3b8"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div className="team-banner">
-                                <h3>CIVILIAN DEVELOPMENT TEAM</h3>
-                            </div>
-                        </div>
-
-                        <div className="team-info">
-                            <div className="logo-section-small">
-                                <div className="logo-placeholder">
-                                    <span>NEXT CS INNOVATION TEAM - Expert developers and engineers dedicated to creating cutting-edge disaster resilience solutions</span>
-                                </div>
-                            </div>
-
-                            <div className="team-members">
-                                <div className="members-grid">
-                                    <div className="member-item">
-                                        <span>Core Development Team:</span>
-                                    </div>
-                                    <div className="member-item">
-                                        <span>Project Lead - System Architecture</span>
-                                    </div>
-                                    <div className="member-item">
-                                        <span>IoT Engineer - Hardware Integration</span>
-                                    </div>
-                                    <div className="member-item">
-                                        <span>AI Specialist - Machine Learning</span>
-                                    </div>
-                                    <div className="member-item">
-                                        <span>Mobile Developer - App Development</span>
-                                    </div>
-                                    <div className="member-item">
-                                        <span>UX Designer - Interface Design</span>
+                        <div className="team-hero">
+                            <div className="team-image-container">
+                                <img
+                                    src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756287239/IMG_4708_ksg7sb.heic"
+                                    alt="CIVILIAN Development Team"
+                                    className="team-photo"
+                                />
+                                <div className="team-overlay">
+                                    <div className="team-badge">
+                                        <h3>CIVILIAN DEVELOPMENT TEAM</h3>
+                                        <p>Building the future of urban disaster resilience</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="team-description">
-                            <p>
-                                Our multidisciplinary team combines expertise in IoT development, artificial intelligence,
-                                mobile app development, and disaster management. We're committed to building innovative
-                                solutions that protect communities and save lives through smart technology. Our mission
-                                is to make disaster resilience accessible to cities worldwide.
-                            </p>
+                        <div className="team-content">
+                            <div className="team-intro">
+                                <h3>NEXT CS INNOVATION TEAM</h3>
+                                <p>
+                                    Our multidisciplinary team combines expertise in IoT development, artificial intelligence,
+                                    mobile app development, and disaster management. We're committed to building innovative
+                                    solutions that protect communities and save lives through smart technology.
+                                </p>
+                            </div>
+
+                            <div className="team-members-grid">
+                                <div className="member-card project-lead">
+                                    <div className="member-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <circle cx="8.5" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                                            <polyline points="17,11 19,13 23,9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div className="member-info">
+                                        <h4>Vince Anjo Villar</h4>
+                                        <p className="member-role">Project Lead</p>
+                                        <span className="member-description">System Architecture & Team Leadership</span>
+                                    </div>
+                                </div>
+
+                                <div className="member-card iot-engineer">
+                                    <div className="member-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
+                                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" strokeWidth="2"/>
+                                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" strokeWidth="2"/>
+                                            <circle cx="7" cy="8" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                                            <circle cx="17" cy="8" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div className="member-info">
+                                        <h4>Noel Zyrence Saludo</h4>
+                                        <p className="member-role">IoT Engineer</p>
+                                        <span className="member-description">Hardware Integration & Sensor Networks</span>
+                                    </div>
+                                </div>
+
+                                <div className="member-card mobile-dev">
+                                    <div className="member-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
+                                            <line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div className="member-info">
+                                        <h4>Albert Soriano Jr</h4>
+                                        <p className="member-role">Mobile Developer</p>
+                                        <span className="member-description">iOS & Android App Development</span>
+                                    </div>
+                                </div>
+
+                                <div className="member-card ai-specialist">
+                                    <div className="member-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+                                            <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+                                            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div className="member-info">
+                                        <h4>Aila Roshiele Donayre</h4>
+                                        <p className="member-role">AI Specialist</p>
+                                        <span className="member-description">Machine Learning & Risk Prediction</span>
+                                    </div>
+                                </div>
+
+                                <div className="member-card ux-designer">
+                                    <div className="member-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" strokeWidth="2"/>
+                                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" strokeWidth="2"/>
+                                            <path d="M2 2l7.586 7.586" stroke="currentColor" strokeWidth="2"/>
+                                            <circle cx="11" cy="11" r="2" stroke="currentColor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <div className="member-info">
+                                        <h4>Jan Mayen Mallen</h4>
+                                        <p className="member-role">UX Designer</p>
+                                        <span className="member-description">User Experience & Interface Design</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
