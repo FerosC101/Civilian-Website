@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './Homepage.css'
+import './Homepage.css';
 
 const Homepage = () => {
     const phone1Ref = useRef(null);
@@ -8,14 +8,14 @@ const Homepage = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
-            const rotationFactor = scrollY * 0.2;
+            const rotationFactor = scrollY * 0.1;
 
             if (phone1Ref.current) {
-                phone1Ref.current.style.transform = `rotateY(${rotationFactor}deg)`;
+                phone1Ref.current.style.transform = `translateX(-40px) rotateY(${-15 + rotationFactor}deg)`;
             }
 
             if (phone2Ref.current) {
-                phone2Ref.current.style.transform = `rotateY(${-rotationFactor}deg)`;
+                phone2Ref.current.style.transform = `translateX(40px) rotateY(${10 - rotationFactor}deg)`;
             }
         };
 
@@ -47,7 +47,7 @@ const Homepage = () => {
             {/* Main Content */}
             <main className="main-content">
                 <div className="container">
-                    {/* Device Mockup Section - Full Width */}
+                    {/* Device Mockup Section */}
                     <section className="device-mockup-section">
                         <div className="mockup-content">
                             <div className="download-section">
@@ -67,7 +67,7 @@ const Homepage = () => {
                                         <button className="store-btn">Download for Android</button>
                                     </div>
                                     <div className="qr-section">
-                                        <div className="qr-code" style={{ width: '180px', height: '180px' }}>
+                                        <div className="qr-code">
                                             <img
                                                 src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756178248/GRIP_PROTOTYPE_ciaije.png"
                                                 alt="QR Code for App Download"
@@ -87,7 +87,7 @@ const Homepage = () => {
                                                     <div className="status-bar"></div>
                                                     <div className="app-preview">
                                                         <div className="app-icon">
-                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                            <svg width="20" height="20" viewBox="0 0 30 30" fill="none">
                                                                 <path d="M15 3C10 3 7 6 7 11C7 13 7.5 14.8 8.5 16.3C6.8 17.5 5.5 19.5 5.5 21.8C5.5 25.5 8.5 28.5 12.2 28.5H17.8C21.5 28.5 24.5 25.5 24.5 21.8C24.5 19.5 23.2 17.5 21.5 16.3C22.5 14.8 23 13 23 11C23 6 19 3 15 3Z" fill="white"/>
                                                             </svg>
                                                         </div>
@@ -109,7 +109,7 @@ const Homepage = () => {
                                                     <div className="status-bar"></div>
                                                     <div className="app-preview">
                                                         <div className="app-icon secondary">
-                                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                                            <svg width="20" height="20" viewBox="0 0 30 30" fill="none">
                                                                 <path d="M15 3C10 3 7 6 7 11C7 13 7.5 14.8 8.5 16.3C6.8 17.5 5.5 19.5 5.5 21.8C5.5 25.5 8.5 28.5 12.2 28.5H17.8C21.5 28.5 24.5 25.5 24.5 21.8C24.5 19.5 23.2 17.5 21.5 16.3C22.5 14.8 23 13 23 11C23 6 19 3 15 3Z" fill="#0ea5e9"/>
                                                             </svg>
                                                         </div>
@@ -128,118 +128,110 @@ const Homepage = () => {
                         </div>
                     </section>
 
-                    {/* About the App Section */}
+                    {/* About the App Section - Fixed Layout */}
                     <section className="about-app-section">
-                        <div className="about-content">
-                            <div className="about-text">
-                                <h2 className="section-title">ABOUT THE APP</h2>
+                        {/* Top Row - IoT Device and About Text */}
+                        <div className="about-header">
+                            <div className="device-showcase">
+                                <img
+                                    src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756217560/CivilianIoT_lsauwh.png"
+                                    alt="CIVILIAN IoT Device"
+                                    className="iot-device-image"
+                                />
+                            </div>
 
-                                <div className="about-description">
-                                    <p>
-                                        CIVILIAN is a comprehensive smart urban disaster resilience platform that acts as
-                                        a virtual brain for cities. Our system collects environmental, structural, and
-                                        behavioral data through IoT sensors, analyzes risks with AI, and provides real-time
-                                        guidance through mobile apps and dashboards.
-                                    </p>
-                                    <p>
-                                        The platform supports both governments and citizens before, during, and after
-                                        disasters using a self-adaptive mesh network that works even during blackouts
-                                        or network failures.
-                                    </p>
+                            <div className="about-text-content">
+                                <h2>ABOUT THE APP</h2>
+                                <p>
+                                    CIVILIAN is a comprehensive smart urban disaster resilience platform that acts as
+                                    a virtual brain for cities. Our system collects environmental, structural, and
+                                    behavioral data through IoT sensors, analyzes risks with AI, and provides real-time
+                                    guidance through mobile apps and dashboards.
+                                </p>
+                                <p>
+                                    The platform supports both governments and citizens before, during, and after
+                                    disasters using a self-adaptive mesh network that works even during blackouts
+                                    or network failures.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Features Row - 3 Cards */}
+                        <div className="features-row">
+                            <div className="feature-card">
+                                <div className="feature-icon">
+                                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
+                                        <path d="M2 17L12 22L22 17" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
+                                        <path d="M2 12L12 17L22 12" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
+                                    </svg>
                                 </div>
+                                <h3>IoT Mesh Disaster Grid</h3>
+                                <p>Self-adaptive mesh network with structural health monitoring, flood detection, and emergency resource routing that works during network failures</p>
+                            </div>
 
-                                <div className="about-topics">
-                                    <div className="topic-item">
-                                        <div className="topic-icon">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
-                                                <path d="M2 17L12 22L22 17" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
-                                                <path d="M2 12L12 17L22 12" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3>IoT Mesh Disaster Grid</h3>
-                                            <p>Self-adaptive mesh network with structural health monitoring, flood detection, and emergency resource routing that works during network failures</p>
-                                        </div>
+                            <div className="feature-card">
+                                <div className="feature-icon">
+                                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>AI Risk Forecasting</h3>
+                                <p>Advanced artificial intelligence analyzes environmental data to predict disasters, generate evacuation routes, and coordinate emergency responses</p>
+                            </div>
+
+                            <div className="feature-card">
+                                <div className="feature-icon">
+                                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none">
+                                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Real-time Emergency Alerts</h3>
+                                <p>Decentralized alert system delivers critical information, evacuation plans, and safety updates directly to citizens and emergency responders</p>
+                            </div>
+                        </div>
+
+                        {/* Dashboard Row - Info and Large Phone */}
+                        <div className="dashboard-row">
+                            <div className="dashboard-info">
+                                <h3>Mobile Dashboard</h3>
+                                <p>
+                                    Monitor your city's safety status with our comprehensive mobile dashboard.
+                                    Get real-time data from IoT sensors, receive instant emergency alerts,
+                                    and access evacuation routes with offline functionality.
+                                </p>
+                                <div className="dashboard-features">
+                                    <div className="dashboard-feature">
+                                        <div className="feature-bullet"></div>
+                                        <span>Real-time environmental monitoring</span>
                                     </div>
-
-                                    <div className="topic-item">
-                                        <div className="topic-icon">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M17 21V19C17 17.9 16.1 17 15 17H9C7.9 17 7 17.9 7 19V21" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                <circle cx="12" cy="7" r="4" stroke="#0ea5e9" strokeWidth="2"/>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3>AI Risk Forecasting</h3>
-                                            <p>Advanced artificial intelligence analyzes environmental data to predict disasters, generate evacuation routes, and coordinate emergency responses</p>
-                                        </div>
+                                    <div className="dashboard-feature">
+                                        <div className="feature-bullet"></div>
+                                        <span>Instant emergency notifications</span>
                                     </div>
-
-                                    <div className="topic-item">
-                                        <div className="topic-icon">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M16 21V19C16 16.79 14.21 15 12 15S8 16.79 8 19V21" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                <circle cx="12" cy="7" r="4" stroke="#0ea5e9" strokeWidth="2"/>
-                                                <path d="M22 21V19C22 17.13 20.63 15.57 18.83 15.17" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                <path d="M16 3.13C17.37 3.53 18.4 4.77 18.4 6.24S17.37 8.95 16 9.35" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3>Real-time Emergency Alerts</h3>
-                                            <p>Decentralized alert system delivers critical information, evacuation plans, and safety updates directly to citizens and emergency responders</p>
-                                        </div>
+                                    <div className="dashboard-feature">
+                                        <div className="feature-bullet"></div>
+                                        <span>Offline evacuation maps</span>
+                                    </div>
+                                    <div className="dashboard-feature">
+                                        <div className="feature-bullet"></div>
+                                        <span>Community safety network</span>
+                                    </div>
+                                    <div className="dashboard-feature">
+                                        <div className="feature-bullet"></div>
+                                        <span>Emergency resource locator</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="about-visual">
-                                <div className="device-showcase">
-                                    <div className="device-container">
-                                        <div className="device-image">
-                                            <div className="device-frame">
-                                                <div className="device-body">
-                                                    <div className="device-logo">
-                                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                                            <circle cx="20" cy="20" r="18" fill="#0ea5e9"/>
-                                                            <path d="M20 8C15 8 11 12 11 17C11 19 11.5 20.8 12.5 22.3C10.8 23.5 9.5 25.5 9.5 27.8C9.5 31.5 12.5 34.5 16.2 34.5H23.8C27.5 34.5 30.5 31.5 30.5 27.8C30.5 25.5 29.2 23.5 27.5 22.3C28.5 20.8 29 19 29 17C29 12 25 8 20 8Z" fill="#fff"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div className="device-ports">
-                                                        <div className="port"></div>
-                                                        <div className="port"></div>
-                                                        <div className="port"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="device-note">IoT Sensor Device - ₱3,000 per unit</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="info-cards">
-                                    <div className="info-card">
-                                        <div className="card-header">
-                                            <div className="civilian-logo-small">
-                                                <span>CIVILIAN</span>
-                                            </div>
-                                            <h3>CIVILIAN PLATFORM</h3>
-                                        </div>
-                                        <p className="card-description">
-                                            Complete disaster resilience solution with IoT monitoring, AI forecasting,
-                                            and emergency coordination tools for smart cities and communities
-                                        </p>
-                                    </div>
-
-                                    <div className="info-card">
-                                        <h4 className="card-title">SUBSCRIPTION MODEL</h4>
-                                        <p>Monthly subscription: ₱50 per device for cloud services, AI analytics, and real-time monitoring</p>
-                                    </div>
-
-                                    <div className="info-card flexible">
-                                        <div className="flexible-content">
-                                            <span>10 KEY FEATURES: IoT Mesh Grid • Structural Monitoring • Flood Detection • AI Forecasting • Mobile Alerts</span>
-                                        </div>
+                            <div className="phone-showcase-large">
+                                <div className="large-phone-frame">
+                                    <div className="large-phone-screen">
+                                        <img
+                                            src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756217891/Dashboard_Page_-_Dark_Mode_pqhcoe.png"
+                                            alt="CIVILIAN Mobile Dashboard"
+                                            className="dashboard-screen"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -251,22 +243,46 @@ const Homepage = () => {
                         <h2 className="section-title">DISASTER RESILIENCE FOUNDATION</h2>
 
                         <div className="foundation-grid">
-                            <div className="disaster-card">
+                            <div className="disaster-card flood-card">
                                 <div className="disaster-image">
+                                    <img
+                                        src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756260519/Flood_lxfdi0.jpg"
+                                        alt="Flood monitoring"
+                                        className="disaster-bg"
+                                    />
+                                    <div className="disaster-overlay"></div>
+                                </div>
+                                <div className="disaster-content">
                                     <span>FLOOD MONITORING</span>
                                     <p>Smart sensors detect water levels and predict flood patterns for early warning systems</p>
                                 </div>
                             </div>
 
-                            <div className="disaster-card">
+                            <div className="disaster-card earthquake-card">
                                 <div className="disaster-image">
+                                    <img
+                                        src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756260519/Earthquake_lp01qj.jpg"
+                                        alt="Earthquake detection"
+                                        className="disaster-bg"
+                                    />
+                                    <div className="disaster-overlay"></div>
+                                </div>
+                                <div className="disaster-content">
                                     <span>EARTHQUAKE DETECTION</span>
                                     <p>Structural health monitoring with vibration sensors and gyroscopes for seismic activity</p>
                                 </div>
                             </div>
 
-                            <div className="disaster-card">
+                            <div className="disaster-card fire-card">
                                 <div className="disaster-image">
+                                    <img
+                                        src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756260517/Fire_mvdgfw.jpg"
+                                        alt="Fire prevention"
+                                        className="disaster-bg"
+                                    />
+                                    <div className="disaster-overlay"></div>
+                                </div>
+                                <div className="disaster-content">
                                     <span>FIRE PREVENTION</span>
                                     <p>Temperature and flame sensors provide rapid fire detection and automated emergency responses</p>
                                 </div>
@@ -290,6 +306,103 @@ const Homepage = () => {
                                     • Enable real-time emergency coordination • Build resilient smart communities</p>
                             </div>
                         </div>
+
+                        {/* Research Articles Section */}
+                        <div className="research-section">
+                            <h3 className="research-title">RESEARCH FOUNDATION</h3>
+                            <p className="research-subtitle">Scientific evidence supporting smart city disaster resilience initiatives</p>
+
+                            {/* Main Article */}
+                            <div className="main-article">
+                                <div className="article-badge">FEATURED RESEARCH</div>
+                                <h4 className="article-title">Smart cities and disaster risk reduction in South Korea by 2022: The case of Daegu</h4>
+                                <p className="article-summary">
+                                    This comprehensive study examines how Daegu Metropolitan City implements smart city technologies
+                                    for disaster risk reduction, achieving up to 20% reduction in property damage and casualties.
+                                    The research demonstrates the effectiveness of integrated IoT sensor networks, data hubs,
+                                    and AI-driven platforms in managing flood, earthquake, and fire disasters.
+                                </p>
+                                <div className="article-meta">
+                                    <span className="article-source">Source: ScienceDirect - Heliyon Journal</span>
+                                    <a href="https://www.sciencedirect.com/science/article/pii/S2405844023060024"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="article-link">
+                                        Read Full Study →
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Sub Articles Grid */}
+                            <div className="sub-articles-grid">
+                                <div className="sub-article">
+                                    <div className="sub-article-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
+                                            <path d="M2 17L12 22L22 17" stroke="#0ea5e9" strokeWidth="2" strokeLinejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <h5>IoT Sensors for Urban Disaster Management</h5>
+                                    <p>Systematic review demonstrating how IoT sensors facilitate disaster management in resilient cities</p>
+                                    <span className="sub-article-source">PMC - Sensors Journal</span>
+                                    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10490738/"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="sub-article-link">View Study</a>
+                                </div>
+
+                                <div className="sub-article">
+                                    <div className="sub-article-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <h5>Disruptive Technologies in Smart Cities</h5>
+                                    <p>Comprehensive review of AI, IoT, and big data applications in urban disaster risk management</p>
+                                    <span className="sub-article-source">ScienceDirect</span>
+                                    <a href="https://www.sciencedirect.com/science/article/pii/S2212096325000178"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="sub-article-link">View Study</a>
+                                </div>
+
+                                <div className="sub-article">
+                                    <div className="sub-article-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round"/>
+                                            <path d="M3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <h5>Smart City Integration & Emergency Response</h5>
+                                    <p>Analysis of how IoT integration reduces emergency response times and saves lives during disasters</p>
+                                    <span className="sub-article-source">IEEE Public Safety</span>
+                                    <a href="https://publicsafety.ieee.org/topics/smart-city-integration-how-iot-is-reducing-emergency-response-times-and-saving-lives/"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="sub-article-link">View Study</a>
+                                </div>
+
+                                <div className="sub-article">
+                                    <div className="sub-article-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="3" stroke="#0ea5e9" strokeWidth="2"/>
+                                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33" stroke="#0ea5e9" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                    <h5>IoT-Based Early Warning Systems</h5>
+                                    <p>Framework for IoT-enabled disaster management through interconnected smart device networks</p>
+                                    <span className="sub-article-source">Mathematical Problems in Engineering</span>
+                                    <a href="https://www.hindawi.com/journals/mpe/2021/9916440/"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="sub-article-link">View Study</a>
+                                </div>
+                            </div>
+
+                            <div className="research-footer">
+                                <p>All research articles support the scientific foundation and technological approach implemented in the CIVILIAN platform</p>
+                            </div>
+                        </div>
                     </section>
 
                     {/* Meet the Team Section */}
@@ -299,7 +412,7 @@ const Homepage = () => {
                         <div className="team-photo">
                             <div className="team-image">
                                 <div className="team-placeholder">
-                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                    <svg width="80" height="80" viewBox="0 0 60 60" fill="none">
                                         <circle cx="30" cy="20" r="8" fill="#64748b"/>
                                         <path d="M15 45c0-8.284 6.716-15 15-15s15 6.716 15 15" fill="#64748b"/>
                                         <circle cx="45" cy="18" r="6" fill="#94a3b8"/>
