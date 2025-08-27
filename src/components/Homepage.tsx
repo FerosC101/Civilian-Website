@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import './Homepage.css';
 
 const Homepage = () => {
-    const phone1Ref = useRef(null);
-    const phone2Ref = useRef(null);
+    const phone1Ref = useRef<HTMLDivElement>(null);
+    const phone2Ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
