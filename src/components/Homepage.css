@@ -1,4 +1,4 @@
-/* Homepage.css - Complete Updated Layout with Research Articles */
+/* Homepage.css - Complete Updated Layout with Fixed Research Section */
 * {
     margin: 0;
     padding: 0;
@@ -562,18 +562,33 @@ body {
 
 /* Foundation Section */
 .foundation-section {
-    background: #f8fafc;
+    background: linear-gradient(145deg, #1e293b, #334155);
     border-radius: 20px;
     padding: 60px 40px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid #334155;
+    position: relative;
+    overflow: hidden;
     margin-bottom: 80px;
 }
 
+.foundation-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 .foundation-section .section-title {
-    color: #64748b;
+    color: #0ea5e9;
     text-align: center;
     margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
 }
 
 .foundation-grid {
@@ -581,26 +596,30 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
 }
 
 .disaster-card {
-    background: #e2e8f0;
+    background: #1e293b;
     border-radius: 12px;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    min-height: 400px; /* Increased from 300px to 400px */
+    min-height: 400px;
     transition: all 0.3s ease;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(14, 165, 233, 0.1);
 }
 
 .disaster-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(14, 165, 233, 0.3);
+    border-color: rgba(14, 165, 233, 0.3);
 }
 
 .disaster-image {
@@ -637,7 +656,7 @@ body {
 .disaster-content {
     position: relative;
     z-index: 3;
-    padding: 40px 25px; /* Increased padding for longer container */
+    padding: 40px 25px;
     background: linear-gradient(
             to top,
             rgba(0, 0, 0, 0.9) 0%,
@@ -665,12 +684,15 @@ body {
 }
 
 .foundation-banner {
-    background: #3b82f6;
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
     color: white;
     padding: 25px;
     border-radius: 12px;
     text-align: center;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
 }
 
 .foundation-banner h3 {
@@ -684,18 +706,28 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    margin-bottom: 60px; /* Added margin bottom for research section */
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
 }
 
 .content-card {
-    background: #e2e8f0;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.15);
     border-radius: 12px;
     padding: 40px 30px;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.content-card:hover {
+    background: rgba(14, 165, 233, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
 }
 
 .content-card h4 {
-    color: #64748b;
+    color: #0ea5e9;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -703,27 +735,43 @@ body {
 }
 
 .content-card p {
-    color: #94a3b8;
+    color: #cbd5e1;
     font-size: 1rem;
     line-height: 1.6;
 }
 
-/* Research Articles Section */
+/* Research Articles Section - FIXED STYLING */
 .research-section {
-    background: #e2e8f0;
+    background: linear-gradient(145deg, #1e293b, #334155);
     border-radius: 16px;
     padding: 50px 40px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #334155;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.research-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .research-title {
-    color: #64748b;
+    color: #0ea5e9;
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
     margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
 }
 
 .research-subtitle {
@@ -732,16 +780,26 @@ body {
     text-align: center;
     margin-bottom: 40px;
     font-style: italic;
+    position: relative;
+    z-index: 2;
 }
 
 .main-article {
-    background: #ffffff;
+    background: rgba(14, 165, 233, 0.05);
     border-radius: 12px;
     padding: 40px;
     margin-bottom: 40px;
     border-left: 4px solid #0ea5e9;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.15);
     position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.main-article:hover {
+    background: rgba(14, 165, 233, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
 }
 
 .article-badge {
@@ -759,16 +817,16 @@ body {
 }
 
 .article-title {
-    color: #1e293b;
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.3;
-    padding-right: 140px; /* Make space for badge */
+    padding-right: 140px;
 }
 
 .article-summary {
-    color: #64748b;
+    color: #cbd5e1;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 25px;
@@ -810,13 +868,15 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 .sub-article {
-    background: #ffffff;
+    background: rgba(14, 165, 233, 0.05);
     border-radius: 10px;
     padding: 25px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(14, 165, 233, 0.15);
     transition: all 0.3s ease;
     position: relative;
     display: flex;
@@ -825,14 +885,15 @@ body {
 
 .sub-article:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(14, 165, 233, 0.08);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
     border-color: #0ea5e9;
 }
 
 .sub-article-icon {
     width: 50px;
     height: 50px;
-    background: rgba(14, 165, 233, 0.1);
+    background: rgba(14, 165, 233, 0.15);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -842,12 +903,12 @@ body {
 }
 
 .sub-article:hover .sub-article-icon {
-    background: rgba(14, 165, 233, 0.2);
+    background: rgba(14, 165, 233, 0.25);
     transform: scale(1.05);
 }
 
 .sub-article h5 {
-    color: #1e293b;
+    color: #ffffff;
     font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 12px;
@@ -855,7 +916,7 @@ body {
 }
 
 .sub-article p {
-    color: #64748b;
+    color: #cbd5e1;
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 15px;
@@ -879,19 +940,21 @@ body {
 }
 
 .sub-article-link:hover {
-    color: #0284c7;
+    color: #38bdf8;
 }
 
 .research-footer {
-    background: rgba(14, 165, 233, 0.05);
+    background: rgba(14, 165, 233, 0.08);
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    border: 1px solid rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.15);
+    position: relative;
+    z-index: 2;
 }
 
 .research-footer p {
-    color: #64748b;
+    color: #cbd5e1;
     font-size: 0.9rem;
     font-style: italic;
     margin: 0;
@@ -899,17 +962,32 @@ body {
 
 /* Team Section */
 .team-section {
-    background: #f8fafc;
+    background: linear-gradient(145deg, #1e293b, #334155);
     border-radius: 20px;
     padding: 60px 40px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid #334155;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .team-section .section-title {
-    color: #64748b;
+    color: #0ea5e9;
     text-align: center;
     margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
 }
 
 .team-photo {
@@ -917,10 +995,13 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
 }
 
 .team-image {
-    background: #e2e8f0;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.15);
     border-radius: 16px;
     padding: 60px;
     margin-bottom: 25px;
@@ -933,14 +1014,15 @@ body {
 }
 
 .team-placeholder {
-    color: #64748b;
+    color: #94a3b8;
 }
 
 .team-banner {
-    background: #1f2937;
+    background: linear-gradient(135deg, #334155, #475569);
     color: white;
     padding: 20px 40px;
     border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .team-banner h3 {
@@ -955,6 +1037,8 @@ body {
     grid-template-columns: 1fr 2fr;
     gap: 40px;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
 }
 
 .logo-section-small {
@@ -964,11 +1048,12 @@ body {
 }
 
 .logo-placeholder {
-    background: #e2e8f0;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.15);
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
-    color: #64748b;
+    color: #cbd5e1;
     font-size: 0.9rem;
     line-height: 1.5;
     min-height: 150px;
@@ -978,7 +1063,8 @@ body {
 }
 
 .team-members {
-    background: #e2e8f0;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.15);
     border-radius: 12px;
     padding: 30px;
 }
@@ -990,28 +1076,33 @@ body {
 }
 
 .member-item {
-    color: #64748b;
+    color: #cbd5e1;
     font-size: 0.9rem;
     padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(14, 165, 233, 0.08);
     border-radius: 8px;
+    border: 1px solid rgba(14, 165, 233, 0.1);
 }
 
 .member-item:first-child {
     font-weight: bold;
-    background: #94a3b8;
+    background: #0ea5e9;
     color: white;
+    border-color: #0ea5e9;
 }
 
 .team-description {
-    background: #e2e8f0;
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.15);
     border-radius: 12px;
     padding: 40px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .team-description p {
-    color: #64748b;
+    color: #cbd5e1;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -1042,7 +1133,7 @@ body {
     }
 
     .disaster-card {
-        min-height: 350px; /* Adjusted for smaller screens */
+        min-height: 350px;
     }
 }
 
