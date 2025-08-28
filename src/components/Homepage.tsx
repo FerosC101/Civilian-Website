@@ -29,18 +29,20 @@ const Homepage = () => {
             <header className="header">
                 <div className="container">
                     <div className="logo-section">
-                        <div className="brain-icon">
-                            <img
-                                src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756178197/CIVILIAN_LOGO_wwg5cm.png"
-                                alt="Civilian Logo"
-                                width="40"
-                                height="40"
-                                style={{ objectFit: 'contain' }}
-                            />
+                        <div className="brand-container">
+                            <div className="brain-icon">
+                                <img
+                                    src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756178197/CIVILIAN_LOGO_wwg5cm.png"
+                                    alt="Civilian Logo"
+                                    width="40"
+                                    height="40"
+                                    style={{ objectFit: 'contain' }}
+                                />
+                            </div>
+                            <h1 className="logo-text">CIVILIAN</h1>
                         </div>
-                        <h1 className="logo-text">CIVILIAN</h1>
+                        <p className="tagline">Smart Urban Disaster Resilience Platform</p>
                     </div>
-                    <p className="tagline">Smart Urban Disaster Resilience Platform</p>
                 </div>
             </header>
 

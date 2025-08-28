@@ -27,20 +27,26 @@ body {
 
 /* Header */
 .header {
-    padding: 40px 0;
+    padding: 32px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(20px);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease;
 }
 
 .logo-section {
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.brand-container {
+    display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 8px;
 }
 
 .brain-icon {
@@ -52,6 +58,10 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+    transition: transform 0.3s ease;
+}
+.brain-icon:hover {
+    transform: scale(1.05);
 }
 
 .logo-text {
@@ -65,10 +75,11 @@ body {
 .tagline {
     color: #64748b;
     font-size: 0.875rem;
-    margin-left: 64px;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-left: 64px;
+    opacity: 0.8;
 }
 
 /* Main Content */
