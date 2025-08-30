@@ -162,7 +162,7 @@ const Homepage = () => {
                     <section className="video-section">
                         <div className="video-header">
                             <h2 className="video-title">CIVILIAN</h2>
-                            <p className="video-subtitle">Smart Dias</p>
+                            <p className="video-subtitle">Smart Urban Disaster Resilience Platform</p>
                         </div>
 
                         <div className="video-container">
@@ -170,7 +170,7 @@ const Homepage = () => {
                                 <video
                                     className="team-video"
                                     controls
-                                    poster="https://res.cloudinary.com/drrzinr9v/video/upload/v1756566002/Civilian_cafvo3.mp4"
+                                    poster="https://res.cloudinary.com/drrzinr9v/image/upload/v1756567653/CIVILIAN_Pitch_Deck_glcd2a.png"
                                     preload="metadata"
                                 >
                                     <source src="https://res.cloudinary.com/drrzinr9v/video/upload/v1756566002/Civilian_cafvo3.mp4" type="video/mp4" />
@@ -186,12 +186,12 @@ const Homepage = () => {
                             </div>
 
                             <div className="video-info">
-                                <h3 className="video-info-title">Building Tomorrow's Smart Cities</h3>
+                                <h3 className="video-info-title">What is CIVILIAN?</h3>
                                 <p className="video-info-text">
-                                    Watch our team demonstrate how CIVILIAN's IoT mesh network and AI-powered
-                                    disaster prediction system creates safer, more resilient urban environments.
-                                    From concept to implementation, see the technology that's revolutionizing
-                                    emergency response and community safety.
+                                    Discover CIVILIAN's revolutionary smart disaster resilience platform that transforms
+                                    how cities prepare for and respond to emergencies. Our IoT mesh network, AI-powered
+                                    prediction system, and mobile application work together to create safer, more
+                                    resilient urban communities through innovative technology and real-time emergency coordination.
                                 </p>
                             </div>
                         </div>
