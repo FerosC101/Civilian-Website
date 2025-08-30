@@ -178,6 +178,10 @@ body {
 .toggle-icon {
     color: white;
     transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .dark-mode .sun-icon {
