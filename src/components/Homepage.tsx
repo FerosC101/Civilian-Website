@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Homepage.css';
 
 const Homepage = () => {
     const phone1Ref = useRef<HTMLDivElement>(null);
     const phone2Ref = useRef<HTMLDivElement>(null);
+    const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,25 +24,52 @@ const Homepage = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        document.body.classList.toggle('dark-mode', darkMode);
+        document.body.classList.toggle('light-mode', !darkMode);
+    }, [darkMode]);
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
     return (
         <div className="homepage">
             {/* Header Section */}
             <header className="header">
                 <div className="container">
-                    <div className="logo-section">
-                        <div className="brand-container">
-                            <div className="brain-icon">
-                                <img
-                                    src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756178197/CIVILIAN_LOGO_wwg5cm.png"
-                                    alt="Civilian Logo"
-                                    width="40"
-                                    height="40"
-                                    style={{ objectFit: 'contain' }}
-                                />
+                    <div className="header-content">
+                        <div className="logo-section">
+                            <img
+                                src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756178197/CIVILIAN_LOGO_wwg5cm.png"
+                                alt="Civilian Logo"
+                                className="logo-image"
+                            />
+                            <div className="brand-text">
+                                <h1 className="logo-text">CIVILIAN</h1>
+                                <p className="tagline">Smart Urban Disaster Resilience Platform</p>
                             </div>
-                            <h1 className="logo-text">CIVILIAN</h1>
                         </div>
-                        <p className="tagline">Smart Urban Disaster Resilience Platform</p>
+
+                        <div className="header-controls">
+                            <button
+                                className="theme-toggle"
+                                onClick={toggleDarkMode}
+                                aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+                            >
+                                <div className="toggle-track">
+                                    <div className="toggle-thumb">
+                                        <svg className="toggle-icon sun-icon" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
+                                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2"/>
+                                        </svg>
+                                        <svg className="toggle-icon moon-icon" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" strokeWidth="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -49,7 +77,7 @@ const Homepage = () => {
             {/* Main Content */}
             <main className="main-content">
                 <div className="container">
-                    {/* Hero Section */}
+                    {/* Hero Section with Video */}
                     <section className="hero-section">
                         <div className="hero-content">
                             <div className="hero-text">
@@ -126,6 +154,45 @@ const Homepage = () => {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Team Video Section */}
+                    <section className="video-section">
+                        <div className="video-header">
+                            <h2 className="video-title">CIVILIAN</h2>
+                            <p className="video-subtitle">Smart Dias</p>
+                        </div>
+
+                        <div className="video-container">
+                            <div className="video-wrapper">
+                                <video
+                                    className="team-video"
+                                    controls
+                                    poster="https://res.cloudinary.com/drrzinr9v/video/upload/v1756566002/Civilian_cafvo3.mp4"
+                                    preload="metadata"
+                                >
+                                    <source src="https://res.cloudinary.com/drrzinr9v/video/upload/v1756566002/Civilian_cafvo3.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div className="video-overlay">
+                                    <div className="play-button">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                            <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="video-info">
+                                <h3 className="video-info-title">Building Tomorrow's Smart Cities</h3>
+                                <p className="video-info-text">
+                                    Watch our team demonstrate how CIVILIAN's IoT mesh network and AI-powered
+                                    disaster prediction system creates safer, more resilient urban environments.
+                                    From concept to implementation, see the technology that's revolutionizing
+                                    emergency response and community safety.
+                                </p>
                             </div>
                         </div>
                     </section>
