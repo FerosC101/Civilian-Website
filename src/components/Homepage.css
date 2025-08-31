@@ -302,7 +302,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Hero Visual */
+/* Hero Visual - Updated for side-by-side phones */
 .hero-visual {
     display: flex;
     justify-content: center;
@@ -318,21 +318,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 60px; /* Space between phones */
 }
 
 .phone-3d {
-    position: absolute;
+    position: relative; /* Changed from absolute */
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     filter: drop-shadow(0 25px 50px var(--shadow-color));
 }
 
 .phone-left {
-    transform: translateX(-40px) rotateY(-10deg);
+    transform: rotateY(-5deg);
     z-index: 2;
 }
 
 .phone-right {
-    transform: translateX(40px) rotateY(10deg);
+    transform: rotateY(5deg);
     z-index: 1;
 }
 
@@ -1205,51 +1206,74 @@ body {
     line-height: 1.7;
 }
 
+/* Updated Members Grid - Simple 3-2 Layout */
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
-    justify-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Center the last two members when there are 5 members total */
-.members-grid > .member-item:nth-child(4),
-.members-grid > .member-item:nth-child(5) {
-    grid-column: span 1;
+.member-item {
+    justify-self: center;
+    width: 100%;
+    max-width: 350px;
 }
 
-/* On larger screens, center the last row */
-@media (min-width: 1024px) {
-    .members-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* Second row: center the last two members (Aila and Mayen) */
 
-    .members-grid > .member-item:nth-child(4) {
-        grid-column: 1 / 2;
-        margin-left: auto;
-        margin-right: auto;
-    }
+/* Second row: center the last two members (Aila and Mayen) side by side */
+.members-grid .member-item:nth-child(4) {
+    grid-column: 1 / 2;
+    justify-self: end;
+    margin-right: 5px;
 
-    .members-grid > .member-item:nth-child(5) {
-        grid-column: 3 / 4;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
-/* On medium screens, keep 2 columns and center appropriately */
-@media (max-width: 1023px) and (min-width: 640px) {
+.members-grid .member-item:nth-child(5) {
+    grid-column: 3 / 4;
+    justify-self: start;
+    margin-left: 5px;
+}
+/* Tablet layout */
+@media (max-width: 1023px) and (min-width: 768px) {
     .members-grid {
         grid-template-columns: repeat(2, 1fr);
         max-width: 700px;
     }
 
-    .members-grid > .member-item:nth-child(5) {
-        grid-column: 1 / -1;
-        max-width: 300px;
+    .members-grid .member-item:nth-child(4),
+    .members-grid .member-item:nth-child(5) {
+        grid-column: span 1;
         justify-self: center;
+        margin: 0;
+    }
+
+    /* Center the 5th item across both columns */
+    .members-grid .member-item:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: 350px;
+    }
+}
+
+/* Medium screens */
+@media (max-width: 767px) and (min-width: 640px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+
+    .members-grid .member-item:nth-child(4),
+    .members-grid .member-item:nth-child(5) {
+        grid-column: span 1;
+        justify-self: center;
+        margin: 0;
+    }
+
+    .members-grid .member-item:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: 350px;
     }
 }
 
@@ -1502,6 +1526,10 @@ body {
     .research-grid {
         gap: 24px;
     }
+
+    .phone-container {
+        gap: 40px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1539,6 +1567,10 @@ body {
 
     .team-image {
         height: 400px;
+    }
+
+    .phone-container {
+        gap: 30px;
     }
 }
 
@@ -1615,6 +1647,13 @@ body {
         gap: 20px;
     }
 
+    .members-grid .member-item:nth-child(4),
+    .members-grid .member-item:nth-child(5) {
+        grid-column: span 1;
+        justify-self: center;
+        margin: 0;
+    }
+
     .member-item {
         flex-direction: column;
         text-align: center;
@@ -1626,6 +1665,15 @@ body {
     .member-icon {
         width: 64px;
         height: 64px;
+    }
+
+    .phone-container {
+        gap: 20px;
+    }
+
+    .phone-frame {
+        width: 140px;
+        height: 280px;
     }
 }
 
@@ -1709,11 +1757,20 @@ body {
     }
 
     .phone-left {
-        transform: translateX(-25px) rotateY(-5deg) scale(0.85);
+        transform: rotateY(-3deg) scale(0.85);
     }
 
     .phone-right {
-        transform: translateX(25px) rotateY(5deg) scale(0.85);
+        transform: rotateY(3deg) scale(0.85);
+    }
+
+    .phone-container {
+        gap: 15px;
+    }
+
+    .phone-frame {
+        width: 120px;
+        height: 240px;
     }
 
     .disaster-item {
@@ -1809,11 +1866,20 @@ body {
     }
 
     .phone-left {
-        transform: translateX(-20px) rotateY(-3deg) scale(0.75);
+        transform: rotateY(-2deg) scale(0.75);
     }
 
     .phone-right {
-        transform: translateX(20px) rotateY(3deg) scale(0.75);
+        transform: rotateY(2deg) scale(0.75);
+    }
+
+    .phone-container {
+        gap: 10px;
+    }
+
+    .phone-frame {
+        width: 100px;
+        height: 200px;
     }
 
     .disaster-item {
