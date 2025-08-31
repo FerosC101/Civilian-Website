@@ -4,7 +4,7 @@ import './Homepage.css';
 const Homepage = () => {
     const phone1Ref = useRef<HTMLDivElement>(null);
     const phone2Ref = useRef<HTMLDivElement>(null);
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkMode, setDarkMode] = useState(false); // Changed to false for light mode default
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,6 +33,7 @@ const Homepage = () => {
         setDarkMode(!darkMode);
     };
 
+    // @ts-ignore
     return (
         <div className="homepage">
             {/* Header Section */}
@@ -113,21 +114,11 @@ const Homepage = () => {
                                     <div ref={phone1Ref} className="phone-3d phone-left">
                                         <div className="phone-frame">
                                             <div className="phone-screen">
-                                                <div className="screen-content">
-                                                    <div className="status-bar"></div>
-                                                    <div className="app-preview">
-                                                        <div className="app-icon">
-                                                            <svg width="20" height="20" viewBox="0 0 30 30" fill="none">
-                                                                <path d="M15 3C10 3 7 6 7 11C7 13 7.5 14.8 8.5 16.3C6.8 17.5 5.5 19.5 5.5 21.8C5.5 25.5 8.5 28.5 12.2 28.5H17.8C21.5 28.5 24.5 25.5 24.5 21.8C24.5 19.5 23.2 17.5 21.5 16.3C22.5 14.8 23 13 23 11C23 6 19 3 15 3Z" fill="white"/>
-                                                            </svg>
-                                                        </div>
-                                                        <div className="preview-bars">
-                                                            <div className="bar"></div>
-                                                            <div className="bar"></div>
-                                                            <div className="bar"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <img
+                                                    src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756611339/Landing_-_Dark_Mode_odm65q.png"
+                                                    alt="CIVILIAN App Landing Screen"
+                                                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }}
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -135,21 +126,11 @@ const Homepage = () => {
                                     <div ref={phone2Ref} className="phone-3d phone-right">
                                         <div className="phone-frame">
                                             <div className="phone-screen">
-                                                <div className="screen-content">
-                                                    <div className="status-bar"></div>
-                                                    <div className="app-preview">
-                                                        <div className="app-icon secondary">
-                                                            <svg width="20" height="20" viewBox="0 0 30 30" fill="none">
-                                                                <path d="M15 3C10 3 7 6 7 11C7 13 7.5 14.8 8.5 16.3C6.8 17.5 5.5 19.5 5.5 21.8C5.5 25.5 8.5 28.5 12.2 28.5H17.8C21.5 28.5 24.5 25.5 24.5 21.8C24.5 19.5 23.2 17.5 21.5 16.3C22.5 14.8 23 13 23 11C23 6 19 3 15 3Z" fill="#0ea5e9"/>
-                                                            </svg>
-                                                        </div>
-                                                        <div className="preview-bars">
-                                                            <div className="bar"></div>
-                                                            <div className="bar"></div>
-                                                            <div className="bar"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <img
+                                                    src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756611339/Home_Page_-_Dark_Mode_wtimns.png"
+                                                    alt="CIVILIAN App Home Screen"
+                                                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }}
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -374,8 +355,8 @@ const Homepage = () => {
 
                                 <div className="mission-item">
                                     <h4 className="mission-label">IMPACT GOALS</h4>
-                                    <p className="mission-text">Prevent loss of life and infrastructure damage • Accelerate disaster recovery
-                                        • Enable real-time emergency coordination • Build resilient smart communities</p>
+                                    <p className="mission-text">Prevent loss of life and infrastructure damage â€¢ Accelerate disaster recovery
+                                        â€¢ Enable real-time emergency coordination â€¢ Build resilient smart communities</p>
                                 </div>
                             </div>
                         </div>

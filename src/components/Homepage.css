@@ -1,24 +1,6 @@
-/* Homepage.css - Complete and Fixed Layout with Dark/Light Mode */
+/* Homepage.css - Complete and Fixed Layout with Light/Dark Mode */
 :root {
-    /* Dark mode colors (default) */
-    --bg-primary: #0f1419;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: rgba(30, 41, 59, 0.8);
-    --text-primary: #ffffff;
-    --text-secondary: #94a3b8;
-    --text-tertiary: #64748b;
-    --accent-primary: #0ea5e9;
-    --accent-secondary: #38bdf8;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --card-bg: rgba(14, 165, 233, 0.03);
-    --card-border: rgba(14, 165, 233, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --gradient-start: #0f1419;
-    --gradient-end: #1e293b;
-}
-
-.light-mode {
-    /* Light mode colors */
+    /* Light mode colors (now default) */
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
     --bg-tertiary: rgba(248, 250, 252, 0.9);
@@ -33,6 +15,24 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --gradient-start: #ffffff;
     --gradient-end: #f8fafc;
+}
+
+.dark-mode {
+    /* Dark mode colors */
+    --bg-primary: #0f1419;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: rgba(30, 41, 59, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --accent-primary: #0ea5e9;
+    --accent-secondary: #38bdf8;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(14, 165, 233, 0.03);
+    --card-border: rgba(14, 165, 233, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --gradient-start: #0f1419;
+    --gradient-end: #1e293b;
 }
 
 * {
@@ -153,7 +153,7 @@ body {
 .toggle-thumb {
     width: 24px;
     height: 24px;
-    background: var(--accent-primary);
+    background: #f59e0b;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -162,11 +162,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    left: calc(100% - 28px);
 }
 
 .dark-mode .toggle-thumb {
     left: 4px;
+    background: var(--accent-primary);
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
 }
 
 .light-mode .toggle-thumb {
@@ -370,14 +373,9 @@ body {
 .phone-screen {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-}
-
-.phone-right .phone-screen {
-    background: linear-gradient(135deg, #374151, #4b5563);
 }
 
 .screen-content {
@@ -1163,6 +1161,7 @@ body {
 .team-info {
     text-align: center;
 }
+
 .team-name {
     color: #ffffff;
     font-size: 1.75rem;
@@ -1210,6 +1209,48 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Center the last two members when there are 5 members total */
+.members-grid > .member-item:nth-child(4),
+.members-grid > .member-item:nth-child(5) {
+    grid-column: span 1;
+}
+
+/* On larger screens, center the last row */
+@media (min-width: 1024px) {
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .members-grid > .member-item:nth-child(4) {
+        grid-column: 1 / 2;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .members-grid > .member-item:nth-child(5) {
+        grid-column: 3 / 4;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* On medium screens, keep 2 columns and center appropriately */
+@media (max-width: 1023px) and (min-width: 640px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+
+    .members-grid > .member-item:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: 300px;
+        justify-self: center;
+    }
 }
 
 .member-item {
@@ -1223,6 +1264,8 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 350px;
 }
 
 .member-item::before {
@@ -1577,6 +1620,7 @@ body {
         text-align: center;
         gap: 16px;
         padding: 32px 24px;
+        max-width: none;
     }
 
     .member-icon {
@@ -1899,6 +1943,10 @@ body {
 
     .light-mode .toggle-thumb {
         left: calc(100% - 24px);
+    }
+
+    .dark-mode .toggle-thumb {
+        left: 4px;
     }
 }
 
