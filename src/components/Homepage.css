@@ -1232,6 +1232,12 @@ body {
 }
 
 .members-grid .member-item:nth-child(5) {
+    grid-column: 2 / 3;
+    justify-self: center;
+    margin: 0;
+}
+
+.members-grid .member-item:nth-child(6) {
     grid-column: 3 / 4;
     justify-self: start;
     margin-left: 5px;
@@ -1244,18 +1250,20 @@ body {
     }
 
     .members-grid .member-item:nth-child(4),
-    .members-grid .member-item:nth-child(5) {
+    .members-grid .member-item:nth-child(5),
+    .members-grid .member-item:nth-child(6) {
         grid-column: span 1;
         justify-self: center;
         margin: 0;
     }
 
-    /* Center the 5th item across both columns */
-    .members-grid .member-item:nth-child(5) {
+    /* Center the 6th item across both columns */
+    .members-grid .member-item:nth-child(6) {
         grid-column: 1 / -1;
         max-width: 350px;
     }
 }
+
 
 /* Medium screens */
 @media (max-width: 767px) and (min-width: 640px) {
@@ -1265,19 +1273,79 @@ body {
     }
 
     .members-grid .member-item:nth-child(4),
-    .members-grid .member-item:nth-child(5) {
+    .members-grid .member-item:nth-child(5),
+    .members-grid .member-item:nth-child(6) {
         grid-column: span 1;
         justify-self: center;
         margin: 0;
     }
 
-    .members-grid .member-item:nth-child(5) {
+    .members-grid .member-item:nth-child(6) {
         grid-column: 1 / -1;
         max-width: 350px;
     }
 }
 
+/* Member Role Colors - Add Graphics Specialist */
+.member-item.graphics-specialist .member-icon {
+    background: rgba(59, 130, 246, 0.15);
+
+    color: #3b82f6;
+}
+
+.member-item.graphics-specialist .member-role {
+    color: #3b82f6;
+}
+
+.member-item.graphics-specialist:hover .member-icon {
+    background: rgba(59, 130, 246, 0.25);
+
+}
+
+.member-item.graphics-specialist:hover {
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+
+}
+
+/* Animation delays for the new member */
+@media (prefers-reduced-motion: no-preference) {
+    .member-item:nth-child(6) { animation-delay: 0.6s; }
+}
+
+/* Responsive Design for 6 members */
+@media (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .members-grid .member-item:nth-child(4),
+    .members-grid .member-item:nth-child(5),
+    .members-grid .member-item:nth-child(6) {
+        grid-column: span 1;
+        justify-self: center;
+        margin: 0;
+    }
+
+    .member-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding: 32px 24px;
+        max-width: none;
+    }
+
+    .member-icon {
+        width: 64px;
+        height: 64px;
+    }
+}
+
 .member-item {
+    justify-self: center;
+    width: 100%;
+    height: 100%; /* Ensure all items take full height */
+    min-height: 180px; /* Set a minimum height */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -1288,7 +1356,6 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    width: 100%;
     max-width: 350px;
 }
 

@@ -355,8 +355,8 @@ const Homepage = () => {
 
                                 <div className="mission-item">
                                     <h4 className="mission-label">IMPACT GOALS</h4>
-                                    <p className="mission-text">Prevent loss of life and infrastructure damage â€¢ Accelerate disaster recovery
-                                        â€¢ Enable real-time emergency coordination â€¢ Build resilient smart communities</p>
+                                    <p className="mission-text">Prevent loss of life and infrastructure damage • Accelerate disaster recovery
+                                        • Enable real-time emergency coordination • Build resilient smart communities</p>
                                 </div>
                             </div>
                         </div>
@@ -431,7 +431,7 @@ const Homepage = () => {
                                         <h5 className="research-item-title">Smart City Integration & Emergency Response</h5>
                                         <p className="research-item-desc">Analysis of how IoT integration reduces emergency response times and saves lives during disasters</p>
                                         <span className="research-item-source">IEEE Public Safety</span>
-                                        <a href="https://publicsafety.ieee.org/topics/smart-city-integration-how-iot-is-reducing-emergency-response-times-and-saving-lives/"
+                                        <a href="https://publicsafety.ieee.org/topics/smart-city-integration-how-iot-is-reducing-emergery-response-times-and-saving-lives/"
                                            target="_blank"
                                            rel="noopener noreferrer"
                                            className="research-item-link">View Study</a>
@@ -568,6 +568,20 @@ const Homepage = () => {
                                     <h4 className="member-name">Jan Mayen Mallen</h4>
                                     <p className="member-role">UX Designer</p>
                                     <span className="member-specialty">User Experience & Interface Design</span>
+                                </div>
+                            </div>
+
+                            <div className="member-item graphics-specialist">
+                                <div className="member-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" strokeWidth="2"/>
+                                        <path d="M8 10l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div className="member-details">
+                                    <h4 className="member-name">Edricka Mae Paulos</h4>
+                                    <p className="member-role">Graphics & Ads Specialist</p>
+                                    <span className="member-specialty">Visual Design & Marketing Campaigns</span>
                                 </div>
                             </div>
                         </div>
