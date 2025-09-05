@@ -100,7 +100,7 @@ const Homepage = () => {
                                     <div className="qr-section">
                                         <div className="qr-code">
                                             <img
-                                                src="https://res.cloudinary.com/drrzinr9v/image/upload/v1756530575/Civilian-Web-QR_mnfvcw.png"
+                                                src="https://res.cloudinary.com/drrzinr9v/image/upload/v1757072428/CivlianWeb_wvwa8h.png"
                                                 alt="QR Code for App Download"
                                                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                                             />
